@@ -4,4 +4,6 @@ Aplicação web simples em Flask para gerenciar uma lista de tarefas (To-Do).
 Permite listar, adicionar, marcar como concluída, editar e deletar tarefas. 
 Estilos em `static/styles.css` e templates em `templates/`.
 
+Aplicação Live:  https://minha-todo-api-em8x.onrender.com
+
 
