@@ -1,0 +1,169 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f9f7fb; /* fallback suave */
+}
+
+h1 {
+    color: #3b0f66;
+    text-align: center;
+    text-shadow: 1px 1px 5px rgba(110, 26, 228, 0.543);
+    font-size: 40px;
+}
+
+/* Estilos para a lista de tarefas */
+
+.lista{
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: linear-gradient(
+        135deg,
+        rgba(245, 236, 255, 1) 0%,
+        rgba(235, 221, 255, 0.9) 50%,
+        rgba(224, 210, 255, 0.85) 100%
+    );    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(2, 2, 1, 1);
+}
+
+li {
+    background: #f6f0f7;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #a90886;
+}
+
+/* permite que o texto da tarefa quebre e não empurre os links */
+li span {
+    flex: 1;
+    min-width: 0;                  /* essencial para permitir encolhimento em flex */
+    overflow-wrap: break-word;     /* permite quebra de palavras longas */
+    word-break: break-word;
+    hyphens: auto;
+    font-size: 18px;
+}
+
+
+/* Estilos para os links de ação */
+.link{
+    margin-left: auto; /* Empurra os links para a direita */
+    display: block;
+    background-color: #f4f4f4;
+}
+
+.link a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: rgb(1, 98, 146);
+    font-size: 12px;
+    display: inline-block;
+}
+
+
+a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    color: rgb(3, 126, 188)
+}
+
+/* Estilos para o formulário de adição de tarefas */
+
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;               /* espaço entre input e botão */
+    margin: 10px auto 0;     /* centraliza horizontalmente */
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;        /* igual ao container */
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    padding: 8px;
+    width: 60%;
+    max-width: 420px;
+    border: 2px solid #9d8104ed;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+
+button {
+    padding: 8px 12px;
+    background-color: #ce0595;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #f9059c;
+}
+
+/******************************** Estilos para a página de edição ***********************************************************/
+.editar {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+ background: linear-gradient(
+        135deg,
+        rgba(242, 233, 255, 1) 0%,
+        rgba(224, 205, 255, 0.9) 55%,
+        rgba(243, 238, 255, 1) 100%
+    );    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(2, 2, 1, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.editar input[type="text"] {
+    padding: 10px;
+    max-width: 520px;
+     width: 50%;
+}
+
+.editar button {
+    padding: 12px 16px;
+   
+}
+
+
+
+
+/* Responsivo: em telas muito pequenas, empilha o conteúdo dos links */
+@media screen and (max-width: 380px) {
+    li{
+        font-size: 13px;
+    }
+
+    .link {
+        width: 40%;           
+    }
+    .link a {
+        display: block;        /* cada link ocupa sua linha */
+        text-align: right;
+        margin-top: 4px;
+        margin-left: 8px;
+        font-size: 10px;
+    }
+
+    .editar form{
+        display: block;
+    }
+
+    .editar input[type="text"] {
+        width: 100%;
+    }
+
+    .editar button{
+        width: 100%;
+        margin: 8px 0px 0px 11px;
+    }
+
+}
